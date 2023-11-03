@@ -9,7 +9,7 @@ namespace CalculadoraTeste
 
         private CalculadoraInpl calculadora;
 
-        private CalculadoraTest()
+        public CalculadoraTest()
         {
             calculadora= new CalculadoraInpl();
         }
@@ -17,7 +17,7 @@ namespace CalculadoraTeste
 
 
         [Fact]
-        public void CalcularSeSoma4Mais4TaRetornando8()
+        public void calcularSeSoma4Mais4TaRetornando8()
         {
             //Arrange(Preparação)
 
@@ -36,7 +36,7 @@ namespace CalculadoraTeste
         }
 
         [Fact]
-        public void CalcularSomaComNumerosPositivos()
+        public void calcularSomaComNumerosPositivos()
         {
             // Arrange
             int numero1 = 3;
@@ -51,7 +51,7 @@ namespace CalculadoraTeste
         }
 
         [Fact]
-        public void CalcularSomaComNumerosNegativos()
+        public void calcularSomaComNumerosNegativos()
         {
             // Arrange
             int numero1 = -3;
@@ -66,7 +66,7 @@ namespace CalculadoraTeste
         }
 
         [Fact]
-        public void CalcularSomaComZero()
+        public void calcularSomaComZero()
         {
             // Arrange
             int numero1 = 0;
@@ -86,7 +86,7 @@ namespace CalculadoraTeste
 
 
         [Fact]
-        public void CalcularSeSubtracao10Menos2Eh8()
+        public void calcularSeSubtracao10Menos2Eh8()
         {
 
             // Arrange
@@ -108,14 +108,14 @@ namespace CalculadoraTeste
 
         [Theory]
         [InlineData(5,2,10)]
-        public void ClacularSeMultiplicacao5Vezes2Eh10(int nunero1 ,int numero2,int resultadoesperado)
+        public void calcularSeMultiplicacao5Vezes2Eh10(int numero1 ,int numero2,int resultadoesperado)
         {
 
             // Arrange
 
             // Act
 
-            int resultadoActual = calculadora.multiplicar(numero2, numero2);
+            int resultadoActual = calculadora.multiplicar(numero1, numero2);
 
 
             // Assert
@@ -132,7 +132,7 @@ namespace CalculadoraTeste
 
         [Theory]
         [InlineData(10, 2, 5)]
-        public void ClacularSeDivisao10por2Eh5(int nunero1, int numero2, int resultadoesperado)
+        public void clacularSeDivisao10por2Eh5(int nunero1, int numero2, int resultadoesperado)
         {
 
             // Arrange
@@ -149,7 +149,7 @@ namespace CalculadoraTeste
         }
 
         [Fact]
-        public void TestarDivisaoPorZero()
+        public void testarDivisaoPorZero()
         {
 
             // Arrange
@@ -168,16 +168,18 @@ namespace CalculadoraTeste
         // testar o Historico
 
         [Fact]
-        public void VerificarSeListaNaoTaVazia()
+        public void verificarSeListaNaoTaVazia()
         {
 
             // Arrange
             calculadora.somar(1, 2);
             calculadora.subtrair(10, 2);
+            calculadora.somar(1, 2);
+            calculadora.subtrair(10, 2);
 
             // Act
 
-           var lista =   calculadora.historico();
+            var lista =   calculadora.historico();
             // Assert
 
             Assert.NotEmpty(lista);
@@ -188,7 +190,7 @@ namespace CalculadoraTeste
 
 
         [Fact]
-        public void VerificarSeListaSoTem3Historico()
+        public void verificarSeListaSoTem3Historico()
         {
 
             // Arrange
