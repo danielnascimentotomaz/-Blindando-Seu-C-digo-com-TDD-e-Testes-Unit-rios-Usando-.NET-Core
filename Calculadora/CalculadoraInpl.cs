@@ -10,7 +10,27 @@ namespace Calculadora
     {
         public int somar(int x, int y)
         {
-            return x * y;
+            return 0;
+           
         }
+
+        public int subtrair(int x, int y){
+            return 0;
+        }
+
+        public int multiplicar(int x, int y){
+            return 0;
+        
+        }
+
+        public int dividir(int x, int y){
+            return 0;
+     
     }
-}
+
+    public List<String> historico(){
+        return new List<String>();
+    }
+
+
+}}
